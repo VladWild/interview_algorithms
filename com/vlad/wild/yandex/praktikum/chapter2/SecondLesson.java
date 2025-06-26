@@ -1,4 +1,4 @@
-package vlad.wild.yandex.praktikum;
+package vlad.wild.yandex.praktikum.chapter2;
 
 import java.util.ArrayList;
 import java.util.List;
