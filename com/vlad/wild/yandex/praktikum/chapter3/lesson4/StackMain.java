@@ -8,7 +8,7 @@ import java.util.Stack;
 public class StackMain {
 
     public static void main(String[] args) {
-        String str = "{}(())[]{}[](())";
+        String str = "{}(())[]{}[](()){";
 
         boolean valid = isValid(str);
         System.out.println("Valid: " + valid);
@@ -33,7 +33,7 @@ public class StackMain {
             }
         }
 
-        return true;
+        return stack.isEmpty();
     }
 
     private static boolean isOpen(char symbol) {
