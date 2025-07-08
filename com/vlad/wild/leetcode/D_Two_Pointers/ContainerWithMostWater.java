@@ -1,6 +1,8 @@
 package vlad.wild.leetcode.D_Two_Pointers;
 
 /**
+ * https://leetcode.com/problems/container-with-most-water/
+ *
  * Вам дан целочисленный массив height длины n.
  * Существует n вертикальных линий, нарисованных таким образом, что две конечные точки i-й линии равны (i, 0) и (i, height[i]).
  *
@@ -36,31 +38,32 @@ public class ContainerWithMostWater {
             }
         }
 
-
         return maxArea;
     }
 
     public static int maxArea2(int[] height) {
         int maxArea = 0;
 
-        int currentPointer = 0;
-        int innerPointer = height.length - 1;
+        int left = 0;
+        int right = height.length - 1;
 
-        while (currentPointer < innerPointer) {
-            int heightLeft = height[currentPointer];
-            int heightRight = height[innerPointer];
+        while (left < right) {
+            //высота левой и правой границы
+            int heightLeft = height[left];
+            int heightRight = height[right];
 
+            //минимальная высота - чтобы понять на сколько контейнер может быть заполнен и из него не вылелась вода
             int minHeight = Math.min(heightLeft, heightRight);
-            int width = innerPointer - currentPointer;
-            int area = minHeight * width;
+            int width = right - left; //ширина
+            int area = minHeight * width; //объем контейнера на этой итерации
 
-            maxArea = Math.max(maxArea, area);
+            maxArea = Math.max(maxArea, area); //если надо, то обновляем максимальный объем
 
             // Двигаем ту сторону, где меньше высота
             if (heightLeft < heightRight) {
-                currentPointer++;
+                left++;
             } else {
-                innerPointer--;
+                right--;
             }
         }
 

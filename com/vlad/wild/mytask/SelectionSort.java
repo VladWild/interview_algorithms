@@ -1,11 +1,11 @@
-package vlad.wild.leetcode.C_Sort;
+package vlad.wild.mytask;
 
 import java.util.Arrays;
 
 /**
  * Selection Sort (сортировка выбором)
  */
-public class SortInner {
+public class SelectionSort {
 
     public static void main(String[] args) {
         int[] arr = {3, 1, 7, 3, -1, 0, 9};

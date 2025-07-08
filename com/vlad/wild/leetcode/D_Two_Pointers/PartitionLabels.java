@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * https://leetcode.com/problems/partition-labels/description/
+ *
  * Вам дается строка s.
  * Мы хотим разбить строку на как можно большее количество частей, чтобы каждая буква появлялась не более чем в одной части.
  * Например, строка 'ababcc' может быть разделена на ['abab', 'cc'], но такие разделы, как ['aba', 'bcc'] или ['ab', 'ab', 'cc'], являются недействительными.
